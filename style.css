@@ -1,0 +1,670 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+/* Container seperti E-SARPRAS */
+.container {
+  background-image: url("assets/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  max-width: 1280px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  padding: 80px 20px;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background section */
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dekorasi kiri dan kanan */
+.dekor {
+  position: absolute;
+  width: 392px;
+  top: 0;
+  z-index: 0;
+}
+
+.kiri {
+  left: -38px;
+  top: -40px;
+}
+
+.kanan {
+  right: 0;
+  top: -16%;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 8rem;
+  color: white;
+  margin-bottom: -82px;
+  margin-top: -16%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+}
+
+.subtext {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+/* Tombol */
+.slide-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1c1c1c;
+  padding: 10px;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 0 10px #000;
+  margin-bottom: 3%;
+}
+
+button span:first-child {
+  background-color: #f4f4f4;
+  padding: 12px 30px;
+  border-radius: 30px;
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.arrow {
+  color: white;
+  font-size: 1.5rem;
+  padding: 0 20px;
+}
+.slider-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: -90px;
+  margin-top: 15%;
+}
+
+.slide-button {
+  position: relative;
+  width: 250px;
+  height: 50px;
+  background-color: #1c1c1c;
+  border: none;
+  border-radius: 40px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 10px;
+  box-shadow: 0 0 10px #000;
+  cursor: default;
+}
+
+.slider-handle {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  height: 40px;
+  background-color: #f4f4f4;
+  border-radius: 30px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: grab;
+  user-select: none;
+  z-index: 2;
+  transition: transform 0.3s ease;
+  margin-left: 2%;
+}
+
+.slide-button .arrow {
+  position: absolute;
+  right: 20px;
+  color: white;
+  font-size: 1.5rem;
+  pointer-events: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/*CSS CHOOSE HTML*/
+.choose-section {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #000000, #1a1a1a);
+  background-image: url("assets/bg.png");
+  background-size: cover;
+  background-position: center;
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+}
+
+.choose-section header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.character-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  gap: 40px;
+  scroll-behavior: auto; /* no smooth! supaya jump gak kelihatan */
+  -webkit-overflow-scrolling: auto;
+  scrollbar-width: none;
+  padding: 3%;
+}
+.character-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* SEMBUNYIKAN SCROLLBAR */
+.character-container::-webkit-scrollbar {
+  display: none;
+}
+.character-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.character-container::-webkit-scrollbar {
+  height: 10px;
+}
+.character-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.character {
+  flex: 0 0 240px;
+  height: 307px;
+  scroll-snap-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  position: relative;
+}
+
+/*2 players css*/
+.badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: purple;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.start-button-wrapper button {
+  background-color: #d9d9d9;
+  color: #68007f;
+  font-family: "Lalezar";
+  font-size: 2rem;
+  letter-spacing: 0.3rem; /* 15% dari 2rem */
+  padding: 10px 40px;
+  border-radius: 60px;
+  border: none;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  margin-left: 43%;
+}
+
+.start-button-wrapper button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(104, 0, 127, 0.5);
+}
+
+/*pilih players*/
+.character.selected {
+  transform: scale(1.08);
+  z-index: 10;
+  box-shadow: 0 0 30px 20px rgba(255, 255, 255, 0.5);
+  animation: zoomHover 0.8s ease;
+}
+
+/*2 players css akhir*/
+
+.character img {
+  width: 188px; /* PERBESAR GAMBAR */
+  height: 193px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  margin-bottom: 10%;
+}
+
+.character figcaption {
+  background-color: white;
+  color: #1c1c1c;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/*CSS BACK BUTTON*/
+.back-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.back-btn {
+  background-color: #d9d9d9;
+  color: #68007f;
+  font-family: "Lalezar", cursive;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50px;
+  padding: 8px 20px;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: scale(1.1);
+  background-color: #bcbcbc;
+}
+//CSS HALAMAN GAME//
+/* Halaman Game */
+/* GAME SCREEN */
+body {
+  margin: 0;
+}
+
+.game-stage {
+  min-height: 112vh;
+  background: linear-gradient(to bottom, #000000, #1c1c1c);
+  background-image: url("assets/bg.png");
+  background-size: cover;
+  background-position: center bottom;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  color: white;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #ffffff44;
+  border: none;
+  color: purple;
+  font-size: 2rem;
+  border-radius: 50%;
+  padding: 10px 16px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.game-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.board-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.middle-area {
+  min-width: 260px;
+  min-height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.vs-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* align vertical center */
+  gap: 50px;
+  flex-wrap: nowrap;
+}
+#vsScreen,
+#gameBoard {
+  position: absolute;
+  top: 60px; /* untuk menghindari header */
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.game-area.fade-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.vs-area,
+.game-area {
+  transition: opacity 0.5s ease;
+}
+
+.player-card {
+  background: linear-gradient(to bottom, #2a2a2a, #000000);
+  padding: 30px 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  min-height: 300px; /* buat lebih tinggi biar rata board */
+}
+
+.player-card img {
+  width: 140px;
+  height: auto;
+}
+
+.player-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  background: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: #1c1c1c;
+}
+
+.player-badge {
+  background: purple;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 10px;
+}
+
+.vs-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #f77;
+  margin-bottom: 22%;
+}
+/*css replay button */
+#replayBtn {
+  background-color: #d9d9d9;
+  color: #68007f;
+  font-family: "Lalezar", cursive;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 30px;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  display: inline-block;
+  justify-content: center;
+}
+
+#replayBtn:hover {
+  transform: scale(1.08);
+  background-color: #bcbcbc;
+}
+
+.winner-stars {
+  margin-top: 10px;
+  color: gold;
+  font-size: 1.5rem;
+  animation: sparkle 1s infinite alternate;
+}
+.win-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: red;
+  height: 4px;
+  transform-origin: left top;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  z-index: 20;
+  transform-origin: 0 50%; /* agar rotasi di pangkal garis */
+}
+
+@keyframes sparkle {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-5px);
+    opacity: 0.5;
+  }
+}
+//css akhir replay button//
+//CSS AKHIR HALAMAN GAME//
+//css board tick tack toe//
+.hidden {
+  display: none !important;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  position: relative;
+}
+.board-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -18%;
+  position: relative;
+}
+
+.turn-indicator {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.cell {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(145deg, #6ee7b7, #3b82f6);
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+.cell:hover {
+  transform: scale(1.1);
+  background: linear-gradient(145deg, #3b82f6, #6ee7b7);
+}
+
+/* Animasi fade */
+/* Transisi antar screen */
+.fade-out {
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 500ms ease;
+}
+
+.vs-area,
+.game-area {
+  opacity: 1;
+  transition: opacity 500ms ease;
+}
+
+.turn-indicator {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+//css board tick tack toe//
+//sorot pemain//
+.player-card.active-turn {
+  outline: 4px solid #fff;
+  box-shadow: 0 0 20px 8px rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+.player-card.active-turn:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
+}
+
+//sorot pemain//
+/* Animasi flip spin */
+.flip {
+  animation: flipAnim 0.3s ease;
+}
+
+@keyframes flipAnim {
+  0% {
+    transform: rotateX(0);
+  }
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}
+
+/* Zoom untuk player aktif */
+.zoom {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .subtext {
+    font-size: 0.9rem;
+  }
+
+  .dekor {
+    width: 80px;
+  }
+
+  .container {
+    padding: 40px 15px;
+  }
+
+  button span:first-child {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .arrow {
+    font-size: 1.2rem;
+  }
+}
+
+/*Animation*/
+@keyframes zoomHover {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Efek saat hover */
+.character:hover {
+  animation: zoomHover 0.8s ease;
+  transform: scale(1.08);
+  z-index: 10;
+  box-shadow: 0 0 30px 20px rgba(255, 255, 255, 0.5);
+}

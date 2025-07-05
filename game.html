@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game VS</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <button class="back-btn" onclick="history.back()">←</button>
+      </nav>
+    </header>
+
+    <main class="game-stage">
+      <h1 class="game-title" id="main-title">Game Start</h1>
+
+      <!-- SPIN RESULT - di luar wrapper -->
+      <div id="spin-result" class="turn-indicator"></div>
+
+      <article class="vs-wrapper">
+        <!-- PLAYER 1 -->
+        <figure class="player-card" id="player1-card">
+          <img id="player1-img" src="" alt="Player 1" />
+          <figcaption class="player-info">
+            <span id="player1-name">Player 1</span>
+            <span class="player-badge">1</span>
+          </figcaption>
+        </figure>
+
+        <!-- MIDDLE AREA -->
+        <div class="middle-area" id="middle-area">
+          <p class="vs-text" id="vs-text">VS</p>
+        </div>
+
+        <!-- PLAYER 2 -->
+        <figure class="player-card" id="player2-card">
+          <img id="player2-img" src="" alt="Player 2" />
+          <figcaption class="player-info">
+            <span id="player2-name">Player 2</span>
+            <span class="player-badge">2</span>
+          </figcaption>
+        </figure>
+      </article>
+
+      <!-- REPLAY BUTTON (diletakkan paling bawah) -->
+      <button id="replayBtn" class="hidden">Play Again</button>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Tic-Tac-Toe Game | Hawila Nadya Putri Tambunan</p>
+    </footer>
+
+    <script src="game.js"></script>
+  </body>
+</html>
